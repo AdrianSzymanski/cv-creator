@@ -1,2 +1,2 @@
 # cv-creator
-A simple resume creator
+A simple resume creator.
