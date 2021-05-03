@@ -1,4 +1,4 @@
-@import './abstracts/abstracts';
+@import 'styles/abstracts/abstracts';
 
 .c-hero {
   --hero-color-private: var(--hero-color, var(--font-color, var(--color-theme)));

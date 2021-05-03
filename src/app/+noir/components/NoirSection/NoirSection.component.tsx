@@ -87,7 +87,7 @@ const renderSectionContent = (content: ContentSection) => {
 
 export const NoirSection: React.FC<Props> = ({ content }) => (
   <div>
-    {content && content.label && (
+    {content.label && (
       <Headline text={content.label} />
     )}
     {renderSectionContent(content)}
