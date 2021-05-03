@@ -1,0 +1,61 @@
+// @TODO: globally remove px unit (test with different --scale values).
+// @TODO: move some variables to +noir feature.
+// @TODO: simplify sheet scaling.
+
+:root {
+  --scale: 1;
+
+  --font-family: 'Open Sans';
+  --font-size: calc(var(--scale) * 11.7px);
+  --border-radius: 0.25rem;
+  --sheet-scale: calc(var(--scale) * 5.55px);
+
+  // ==========================================================================
+  // Colors
+  //
+  // First tier defines generic colors,
+  // second tier uses them to provide semantic meaning.
+  // ==========================================================================
+
+  // First tier
+  --color-black: hsl(0, 0%, 0%);
+  --color-dark-05: hsl(0, 0%, 5%);
+  --color-dark-10: hsl(0, 0%, 10%);
+  --color-dark-15: hsl(0, 0%, 15%);
+  --color-dark-20: hsl(0, 0%, 20%);
+  --color-dark-25: hsl(0, 0%, 25%);
+  --color-dark-30: hsl(0, 0%, 30%);
+  --color-dark-35: hsl(0, 0%, 35%);
+  --color-dark-40: hsl(0, 0%, 40%);
+  --color-dark-45: hsl(0, 0%, 45%);
+  --color-dark-50: hsl(0, 0%, 50%);
+  --color-dark-55: hsl(0, 0%, 55%);
+  --color-dark-60: hsl(0, 0%, 60%);
+  --color-dark-65: hsl(0, 0%, 65%);
+  --color-dark-70: hsl(0, 0%, 70%);
+  --color-dark-75: hsl(0, 0%, 75%);
+  --color-dark-80: hsl(0, 0%, 80%);
+  --color-dark-85: hsl(0, 0%, 85%);
+  --color-dark-90: hsl(0, 0%, 90%);
+  --color-dark-95: hsl(0, 0%, 95%);
+  --color-white: hsl(0, 0%, 100%);
+
+  --color-clouds: hsl(192, 15%, 94%);
+  --color-peter-river: hsl(204, 70%, 53%);
+  --color-wet-asphalt: hsl(210, 29%, 29%);
+  --color-midnight-blue: hsl(210, 29%, 24%);
+
+  // Second tier
+  --color-theme: var(--color-dark-15);
+  --color-theme-secondary: var(--color-dark-35);
+  --color-theme-tertiary: var(--color-dark-50);
+
+  --color-canvas: var(--color-dark-90);
+  --color-underlay: var(--color-dark-95);
+  --color-shadow: var(--color-dark-80);
+
+  @media print {
+    --sheet-scale: 1mm;
+    --font-size: 1vw;
+  }
+}

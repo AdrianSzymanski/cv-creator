@@ -1,0 +1,22 @@
+@import 'styles/abstracts/abstracts';
+
+.c-canvas {
+  --canvas-background-color-private: var(--canvas-background-color, var(--color-canvas));
+}
+
+.c-canvas {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  min-height: 100vh;
+  background: var(--canvas-background-color-private);
+}
+
+.c-canvas__item {
+  margin: 32px;
+
+  @media print {
+    margin: 0;
+  }
+}

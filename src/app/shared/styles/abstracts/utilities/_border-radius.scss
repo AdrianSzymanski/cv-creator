@@ -1,0 +1,22 @@
+// Default border-radius
+
+@mixin border-radius($_size: var(--border-radius)) {
+  border-radius: $_size;
+}
+
+@mixin border-top-radius($_size: var(--border-radius)) {
+  border-radius: $_size $_size 0 0;
+}
+
+@mixin border-right-radius($_size: var(--border-radius)) {
+  border-radius: 0 $_size $_size 0;
+}
+
+@mixin border-bottom-radius($_size: var(--border-radius)) {
+  border-radius: 0 0 $_size $_size;
+}
+
+@mixin border-left-radius($_size: var(--border-radius)) {
+  border-radius: $_size 0 0 $_size;
+}
+
