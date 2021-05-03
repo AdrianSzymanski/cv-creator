@@ -1,0 +1,27 @@
+@import './abstracts/abstracts';
+
+@mixin paragraphTheme() {
+  font-size: 1.6rem;
+  color: var(--paragraph-group-color-private);
+  line-height: 1.3em;
+}
+
+.c-paragraph-group {
+  --paragraph-group-color-private: var(--paragraph-group-color, var(--font-color, var(--color-theme)));
+}
+
+.c-paragraph-group:not(:last-of-type) {
+  margin-bottom: 2rem;
+}
+
+.c-paragraph-group__headline {
+  @include paragraphTheme();
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.c-paragraph-group__text {
+  @include paragraphTheme();
+  margin-bottom: 0;
+  font-weight: 300;
+}

@@ -1,0 +1,23 @@
+@import './abstracts/abstracts';
+
+.c-headline {
+  --headline-font-color-private: var(--headline-font-color, var(--font-color));
+  --headline-background-color-private: var(--headline-background-color, var(--color-theme-tertiary));
+  --headline-side-offset-private: var(--headline-side-offset, 0);
+}
+
+.c-headline {
+  margin: 3rem 0 3rem var(--headline-side-offset-private);
+}
+
+.c-headline__inner {
+  display: inline-block;
+  min-width: 19rem;
+  padding: 1rem 3rem;
+  border-radius: 0.4rem;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--headline-font-color-private);
+  letter-spacing: -0.15rem;
+  background-color: var(--headline-background-color-private);
+}

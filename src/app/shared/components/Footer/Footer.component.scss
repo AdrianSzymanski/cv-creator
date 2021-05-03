@@ -1,0 +1,16 @@
+@import './abstracts/abstracts';
+
+.c-footer{
+  --footer-color-private: var(--footer-color, var(--font-color));
+  --footer-border-color-private: var(--footer-border-color, var(--font-color));
+}
+
+.c-footer {
+  margin-top: 3rem;
+  border-top: 0.1rem solid var(--footer-border-color-private);
+  padding-top: 0.8rem;
+  font-size: 0.8rem;
+  color: var(--footer-color-private);
+  line-height: 1.2em;
+  text-align: justify;
+}

@@ -1,0 +1,27 @@
+@import './abstracts/abstracts';
+
+.c-hero {
+  --hero-color-private: var(--hero-color, var(--font-color, var(--color-theme)));
+}
+
+.c-hero {
+  display: block;
+  margin: 3rem 0;
+}
+
+.c-hero__title {
+  margin-bottom: 8px;
+  font-size: 6.2rem;
+  font-weight: 800;
+  color: var(--hero-color-private);
+  line-height: 1em;
+  letter-spacing: -0.5rem;
+}
+
+.c-hero__subtitle {
+  font-size: 4rem;
+  font-weight: 300;
+  color: var(--hero-color-private);
+  line-height: 1em;
+  white-space: nowrap;
+}

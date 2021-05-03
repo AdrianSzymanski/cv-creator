@@ -1,0 +1,27 @@
+@import './abstracts/abstracts';
+
+$_bullet-size: 0.65rem;
+
+.c-list-item {
+  --list-item-bullet-color-private: var(--list-item-bullet-color, var(--font-color));
+}
+
+.c-list-item {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  line-height: 2.1rem;
+
+  &::before {
+    content: '';
+    flex: 0 0 $_bullet-size;
+    width: $_bullet-size;
+    height: $_bullet-size;
+    margin-right: 1rem;
+    margin-top: calc((2.1rem - #{$_bullet-size}) * 0.5 + 0.1rem);
+    border-radius: 2px;
+    background-color: var(--list-item-bullet-color-private);
+    transform: rotate(45deg);
+  }
+}

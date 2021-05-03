@@ -1,0 +1,45 @@
+// Default box-shadow
+
+@mixin box-shadow($_side: all, $_inset: null, $_color: var(--color-shadow)) {
+  $_x: 0;
+  $_y: 0;
+  $_blur: 5px;
+  $_spread: 0;
+  $_offset: 5px;
+  $_negative-offset: ($_offset * -1);
+
+  @if $_side != all {
+    $_spread: $_negative-offset;
+  }
+
+  @if $_inset {
+    $_inset: inset;
+  }
+
+  @if ($_side == 'top') {
+    $_y: $_negative-offset;
+  }
+  @if ($_side == 'top' and $_inset) {
+    $_y: $_offset;
+  }
+  @if ($_side == 'right') {
+    $_x: $_offset;
+  }
+  @if ($_side == 'right' and $_inset) {
+    $_x: $_negative-offset;
+  }
+  @if ($_side == 'bottom') {
+    $_y: $_offset;
+  }
+  @if ($_side == 'bottom' and $_inset) {
+    $_y: $_negative-offset;
+  }
+  @if ($_side == 'left') {
+    $_x: $_negative-offset;
+  }
+  @if ($_side == 'left' and $_inset) {
+    $_x: $_offset;
+  }
+
+  box-shadow: $_inset $_x $_y $_blur $_spread $_color;
+}

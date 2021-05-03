@@ -1,0 +1,18 @@
+@import './abstracts/abstracts';
+
+.c-skill {
+  --skill-color-private: var(--skill-color, var(--font-color, var(--color-theme)));
+}
+
+// @TODO: create <Spacer /> component.
+.c-skill:not(:last-of-type) {
+  margin-bottom: 1.5rem;
+}
+
+.c-skill__name {
+  margin-bottom: 8px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--skill-color-private);
+  line-height: 1.3em;
+}

@@ -1,0 +1,19 @@
+@import './abstracts/abstracts';
+
+.c-badge {
+  --badge-color-private: var(--badge-color, var(--color-white));
+  --badge-background-color-private: var(--badge-background-color, var(--color-theme-secondary));
+}
+
+.c-badge {
+  display: inline-flex;
+  align-content: center;
+  margin: 0.15rem 0.5rem 0 0;
+  padding: 0.2rem 0.75rem 0; // @NOTE: looks uneven in browser, but works in PDF.
+  border-radius: 0.3rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--badge-color-private);
+  line-height: 1.8rem;
+  background-color: var(--badge-background-color-private);
+}

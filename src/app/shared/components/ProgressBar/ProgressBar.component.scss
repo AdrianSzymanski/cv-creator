@@ -1,0 +1,27 @@
+@import './abstracts/abstracts';
+
+$_height: 5px; // @NOTE: rem value looks uneven in PDF file.
+
+.c-progress-bar {
+  --progress-bar-background-color-private: var(--progress-bar-background-color, transparent);
+  --progress-bar-border-color-private: var(--progress-bar-border-color, var(--color-theme));
+  --progress-bar-tracker-background-color-private: var(--progress-bar-tracker-background-color, var(--color-theme));
+}
+
+.c-progress-bar {
+  position: relative;
+  height: $_height;
+  border: 1px solid var(--progress-bar-border-color-private);
+  border-radius: ($_height * 0.5);
+  background-color: var(--progress-bar-background-color-private);
+}
+
+.c-progress-bar__tracker {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  height: 100%;
+  border-radius: ($_height * 0.5);
+  background-color: var(--progress-bar-tracker-background-color-private);
+}

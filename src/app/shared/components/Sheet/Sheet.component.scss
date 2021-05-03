@@ -1,0 +1,35 @@
+@import './abstracts/abstracts';
+
+.c-sheet {
+  // @NOTE: sheet has standard A4 format.
+  --sheet-width-private: var(--sheet-width, calc(210 * var(--sheet-scale)));
+  --sheet-height-private: var(--sheet-height, calc(296.9 * var(--sheet-scale)));
+  --sheet-promo-size: 40%;
+}
+
+.c-sheet {
+  @include box-shadow();
+  display: flex;
+  align-items: stretch;
+  flex-flow: row;
+  width: var(--sheet-width-private);
+  height: var(--sheet-height-private);
+
+  @media print {
+    box-shadow: none;
+  }
+}
+
+.c-sheet__promo {
+  --panel-padding: 3rem 5rem;
+
+  flex: 0 0 var(--sheet-promo-size);
+  max-width: var(--sheet-promo-size);
+}
+
+.c-sheet__content {
+  --panel-theme-dark-headline-offset: -4.5rem;
+
+  flex: 0 0 calc(100% - var(--sheet-promo-size));
+  max-width: calc(100% - var(--sheet-promo-size));
+}

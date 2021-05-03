@@ -1,0 +1,15 @@
+@import './abstracts/abstracts';
+
+.c-icon-list {
+  --icon-list-filter-private: var(--icon-list-filter, none);
+}
+
+.c-icon-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.c-icon-list__image {
+  height: 3rem;
+  filter: var(--icon-list-filter-private);
+}
