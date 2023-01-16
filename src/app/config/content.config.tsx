@@ -90,7 +90,7 @@ export type ContentSection =
 type Content = {
   about: ContentSection;
   contact: ContentSection;
-  coverLetter: ContentSection;
+  coverLetter?: ContentSection;
   education: ContentSection;
   experience: ContentSection;
   footer: ContentSection;

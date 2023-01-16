@@ -15,6 +15,7 @@ import './NoirCv.component.scss';
 
 export const NoirCv: React.FC = () => (
   <Canvas>
+    {content.coverLetter && (
       <Sheet
         promo={(
           <Panel theme={PanelTheme.DARK}>
@@ -35,6 +36,7 @@ export const NoirCv: React.FC = () => (
           </Panel>
         )}
       />
+    )}
     <Sheet
       promo={(
         <Panel theme={PanelTheme.LIGHT}>
