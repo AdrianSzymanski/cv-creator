@@ -10,6 +10,7 @@ import {
   ListItem,
   ParagraphGroup,
   Skill,
+  Stack,
 } from 'src/app/shared/components';
 import { ContentSection, CONTENT_SECTION_TYPE } from '../../../config/content.config';
 
@@ -35,51 +36,72 @@ const renderSectionContent = (content: ContentSection) => {
         <IconList list={content.list} />
       );
     case CONTENT_SECTION_TYPE.LIST_NESTED:
-      return content.list.map(item => (
-        <ParagraphGroup
-          headline={item.headline}
-          text={(
-            <List>
-              {item.content.list.map(bulletPoint => (
-                <ListItem key={bulletPoint}>{bulletPoint}</ListItem>
-              ))}
-              {item.content?.badges && (
-                <ListItem>
-                  <div>
-                    {item.content.badges.map(badge => (
-                      <Badge
-                        label={badge}
-                        key={badge}
-                      />
-                    ))}
-                  </div>
-                </ListItem>
+      return (
+        <Stack
+          stackDirection={content.stackDirection}
+          columnCount={content.columnCount}
+        >
+          {content.list.map(item => (
+            <ParagraphGroup
+              headline={item.headline}
+              text={(
+                <List>
+                  {item.content.list.map(bulletPoint => (
+                    <ListItem key={bulletPoint}>{bulletPoint}</ListItem>
+                  ))}
+                  {item.content?.badges && (
+                    <ListItem>
+                      <div>
+                        {item.content.badges.map(badge => (
+                          <Badge
+                            label={badge}
+                            key={badge}
+                          />
+                        ))}
+                      </div>
+                    </ListItem>
+                  )}
+                </List>
               )}
-            </List>
-          )}
-          key={item.headline}
-        />
-      ));
+              key={item.headline}
+            />
+          ))}
+        </Stack>
+      );
     case CONTENT_SECTION_TYPE.LIST_SIMPLE:
-      return content.list.map(item => (
-        <ParagraphGroup
-          headline={item.headline}
-          text={(
-            item.href
-              ? <a href={item.href} target={'_blank'} rel="noopener noreferrer">{item.content}</a>
-              : item.content
-          )}
-          key={item.headline}
-        />
-      ));
+      return (
+        <Stack
+          stackDirection={content.stackDirection}
+          columnCount={content.columnCount}
+        >
+          {content.list.map(item => (
+            <ParagraphGroup
+              headline={item.headline}
+              text={(
+                item.href
+                  ? <a href={item.href} target={'_blank'} rel="noopener noreferrer">{item.content}</a>
+                  : item.content
+              )}
+              key={item.headline}
+            />
+          ))}
+        </Stack>
+      );
     case CONTENT_SECTION_TYPE.LIST_SKILLS:
-      return content.list.map(item => (
-        <Skill
-          label={item.headline}
-          value={item.content}
-          key={item.headline}
-        />
-      ));
+      return (
+        <Stack
+          stackDirection={content.stackDirection}
+          columnCount={content.columnCount}
+        >
+          {content.list.map(item => (
+            <Skill
+              label={item.headline}
+              value={item.content}
+              key={item.headline}
+            />
+          ))}
+        </Stack>
+      );
     default:
       return null;
   }

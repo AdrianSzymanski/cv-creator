@@ -1,0 +1,24 @@
+@import 'styles/abstracts/abstracts';
+
+.c-stack {
+  --stack-gap: 2rem;
+}
+
+.c-stack {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 calc(var(--stack-gap) * -0.5) calc(var(--stack-gap) * -1);
+}
+
+.c-stack--direction-vertical {
+  flex-direction: column;
+}
+
+.c-stack--direction-horizontal {
+  flex-direction: row;
+}
+
+.c-stack__item {
+  flex: 0 0 calc((100 / var(--stack-column-count) * 1%));
+  padding: 0 calc(var(--stack-gap) * 0.5) var(--stack-gap);
+}

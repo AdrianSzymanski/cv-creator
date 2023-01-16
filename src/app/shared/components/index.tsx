@@ -11,3 +11,4 @@ export * from './ParagraphGroup';
 export * from './ProgressBar';
 export * from './Sheet';
 export * from './Skill';
+export * from './Stack';

@@ -8,6 +8,7 @@ import imgRollerskating from '../shared/images/rollerskating.svg';
 // import imgTaekwondo from '../shared/images/taekwondo.svg';
 import imgTravel from '../shared/images/suitcase.svg';
 import imgChess from '../shared/images/chess.svg';
+import { StackProps } from '../shared/components';
 
 export enum CONTENT_SECTION_TYPE {
   FOOTER = 'footer',
@@ -16,6 +17,7 @@ export enum CONTENT_SECTION_TYPE {
   LIST_NESTED = 'list-nested',
   LIST_SIMPLE = 'list-simple',
   LIST_SKILLS = 'list-skills',
+  LIST_STRENGTHS = 'list-strengths',
 };
 
 type ContentBulletPointList = {
@@ -62,19 +64,19 @@ type ContentSectionListNested = {
   type: CONTENT_SECTION_TYPE.LIST_NESTED;
   label?: string;
   list: ContentListItemBulletPoints[];
-};
+} & StackProps;
 
 type ContentSectionListSimple = {
   type: CONTENT_SECTION_TYPE.LIST_SIMPLE;
   label?: string;
   list: ContentListItemSimple[];
-};
+} & StackProps;
 
 type ContentSectionListSkills = {
   type: CONTENT_SECTION_TYPE.LIST_SKILLS;
   label?: string;
   list: ContentListItemProgressBar[];
-};
+} & StackProps;
 
 export type ContentSection =
   | ContentSectionFooter
@@ -88,7 +90,7 @@ export type ContentSection =
 type Content = {
   about: ContentSection;
   contact: ContentSection;
-  coverLetter: ContentSection;
+  coverLetter?: ContentSection;
   education: ContentSection;
   experience: ContentSection;
   footer: ContentSection;
@@ -96,6 +98,7 @@ type Content = {
   hobbies: ContentSection;
   languages: ContentSection;
   skills: ContentSection;
+  strengths: ContentSection;
 };
 
 export const content: Content = {
@@ -267,11 +270,33 @@ export const content: Content = {
         headline: 'Adipiscing',
         content: 0.7,
       },
+    ],
+    stackDirection: 'horizontal',
+    columnCount: 2,
+  },
+  strengths: {
+    type: CONTENT_SECTION_TYPE.LIST_SIMPLE,
+    label: 'Strengths',
+    list: [
       {
-        headline: 'Elit',
-        content: 0.85,
+        headline: 'Ipsum',
+        content: 'Lorem ipsum dolor sit amet',
+      },
+      {
+        headline: 'Dolor',
+        content: 'Lorem ipsum dolor sit amet',
+      },
+      {
+        headline: 'Sit',
+        content: 'Lorem ipsum dolor sit amet',
+      },
+      {
+        headline: 'Amet',
+        content: 'Lorem ipsum dolor sit amet',
       },
     ],
+    stackDirection: 'horizontal',
+    columnCount: 2,
   },
   languages: {
     type: CONTENT_SECTION_TYPE.LIST_SIMPLE,
@@ -286,6 +311,8 @@ export const content: Content = {
         content: 'advanced',
       },
     ],
+    stackDirection: 'horizontal',
+    columnCount: 2,
   },
   hobbies: {
     type: CONTENT_SECTION_TYPE.LIST_ICONS,
