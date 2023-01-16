@@ -17,6 +17,7 @@ export enum CONTENT_SECTION_TYPE {
   LIST_NESTED = 'list-nested',
   LIST_SIMPLE = 'list-simple',
   LIST_SKILLS = 'list-skills',
+  LIST_STRENGTHS = 'list-strengths',
 };
 
 type ContentBulletPointList = {
@@ -97,6 +98,7 @@ type Content = {
   hobbies: ContentSection;
   languages: ContentSection;
   skills: ContentSection;
+  strengths: ContentSection;
 };
 
 export const content: Content = {
@@ -267,6 +269,30 @@ export const content: Content = {
       {
         headline: 'Adipiscing',
         content: 0.7,
+      },
+    ],
+    stackDirection: 'horizontal',
+    columnCount: 2,
+  },
+  strengths: {
+    type: CONTENT_SECTION_TYPE.LIST_SIMPLE,
+    label: 'Strengths',
+    list: [
+      {
+        headline: 'Ipsum',
+        content: 'Lorem ipsum dolor sit amet',
+      },
+      {
+        headline: 'Dolor',
+        content: 'Lorem ipsum dolor sit amet',
+      },
+      {
+        headline: 'Sit',
+        content: 'Lorem ipsum dolor sit amet',
+      },
+      {
+        headline: 'Amet',
+        content: 'Lorem ipsum dolor sit amet',
       },
     ],
     stackDirection: 'horizontal',
