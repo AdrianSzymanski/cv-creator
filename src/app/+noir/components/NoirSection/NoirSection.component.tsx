@@ -11,31 +11,31 @@ import {
   ParagraphGroup,
   Skill,
   Stack,
-} from 'src/app/shared/components';
-import { ContentSection, CONTENT_SECTION_TYPE } from '../../../config/content.config';
+} from '../../../shared/components';
+import { NoirContentSection, NOIR_CONTENT_SECTION_TYPE } from '../..';
 
 type Props = {
-  content: ContentSection;
+  content: NoirContentSection;
 };
 
-const renderSectionContent = (content: ContentSection) => {
+const renderSectionContent = (content: NoirContentSection) => {
   switch (content.type) {
-    case CONTENT_SECTION_TYPE.FOOTER:
+    case NOIR_CONTENT_SECTION_TYPE.FOOTER:
       return (
         <Footer text={content.content} />
       );
-    case CONTENT_SECTION_TYPE.HERO:
+    case NOIR_CONTENT_SECTION_TYPE.HERO:
       return (
         <Hero
           title={content.name}
           subtitle={content.profession}
         />
       );
-    case CONTENT_SECTION_TYPE.LIST_ICONS:
+    case NOIR_CONTENT_SECTION_TYPE.LIST_ICONS:
       return (
         <IconList list={content.list} />
       );
-    case CONTENT_SECTION_TYPE.LIST_NESTED:
+    case NOIR_CONTENT_SECTION_TYPE.LIST_NESTED:
       return (
         <Stack
           stackDirection={content.stackDirection}
@@ -68,7 +68,7 @@ const renderSectionContent = (content: ContentSection) => {
           ))}
         </Stack>
       );
-    case CONTENT_SECTION_TYPE.LIST_SIMPLE:
+    case NOIR_CONTENT_SECTION_TYPE.LIST_SIMPLE:
       return (
         <Stack
           stackDirection={content.stackDirection}
@@ -87,7 +87,7 @@ const renderSectionContent = (content: ContentSection) => {
           ))}
         </Stack>
       );
-    case CONTENT_SECTION_TYPE.LIST_SKILLS:
+    case NOIR_CONTENT_SECTION_TYPE.LIST_SKILLS:
       return (
         <Stack
           stackDirection={content.stackDirection}

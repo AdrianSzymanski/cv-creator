@@ -6,32 +6,30 @@ import {
   PanelTheme,
   Sheet,
 } from '../../../shared/components';
-import { NoirSection } from '..';
-import { content } from '../../../config/content.config';
+import { NoirSection } from '../NoirSection';
+import { NoirContent } from '../../config';
 
 import './NoirCv.component.scss';
 
-// @TODO: review markup semantics.
-
 export const NoirCv: React.FC = () => (
   <Canvas>
-    {content.coverLetter && (
+    {NoirContent.coverLetter && (
       <Sheet
         promo={(
           <Panel theme={PanelTheme.DARK}>
             <div>
-              <NoirSection content={content.hero} />
-              <NoirSection content={content.contact} />
+              <NoirSection content={NoirContent.hero} />
+              <NoirSection content={NoirContent.contact} />
             </div>
           </Panel>
         )}
         content={(
           <Panel theme={PanelTheme.LIGHT}>
             <div>
-              <NoirSection content={content.coverLetter} />
+              <NoirSection content={NoirContent.coverLetter} />
             </div>
             <div>
-              <NoirSection content={content.footer} />
+              <NoirSection content={NoirContent.footer} />
             </div>
           </Panel>
         )}
@@ -41,26 +39,26 @@ export const NoirCv: React.FC = () => (
       promo={(
         <Panel theme={PanelTheme.LIGHT}>
           <div>
-            <NoirSection content={content.hero} />
-            <NoirSection content={content.contact} />
+            <NoirSection content={NoirContent.hero} />
+            <NoirSection content={NoirContent.contact} />
           </div>
           <div>
-            <NoirSection content={content.skills} />
-            <NoirSection content={content.strengths} />
-            <NoirSection content={content.languages} />
-            <NoirSection content={content.hobbies} />
+            <NoirSection content={NoirContent.skills} />
+            <NoirSection content={NoirContent.strengths} />
+            <NoirSection content={NoirContent.languages} />
+            <NoirSection content={NoirContent.hobbies} />
           </div>
         </Panel>
       )}
       content={(
         <Panel theme={PanelTheme.DARK}>
           <div>
-            <NoirSection content={content.about} />
-            <NoirSection content={content.experience} />
-            <NoirSection content={content.education} />
+              <NoirSection content={NoirContent.about} />
+              <NoirSection content={NoirContent.experience} />
+              <NoirSection content={NoirContent.education} />
           </div>
           <div>
-            <NoirSection content={content.footer} />
+            <NoirSection content={NoirContent.footer} />
           </div>
         </Panel>
       )}
