@@ -10,6 +10,7 @@ export enum PanelTheme {
 
 type Props = {
   theme: PanelTheme;
+  children: React.ReactNode;
 }
 
 export const Panel: React.FC<Props> = ({ theme, children }) => (

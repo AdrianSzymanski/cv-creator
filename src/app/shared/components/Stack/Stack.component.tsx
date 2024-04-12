@@ -5,6 +5,7 @@ import './Stack.component.scss';
 export type StackProps = {
   stackDirection?: 'horizontal' | 'vertical';
   columnCount?: number;
+  children?: React.ReactNode;
 }
 
 export const Stack: React.FC<StackProps> = ({

@@ -1,16 +1,16 @@
 // @TODO: add images as inline svg's to be able to control their color.
 // @TODO: move config to +noir.
 
-import imgAstronomy from '../shared/images/telescope.svg';
-import imgJogging from '../shared/images/jogging.svg';
-// import imgMovies from '../shared/images/movies.svg';
-import imgRollerskating from '../shared/images/rollerskating.svg';
-// import imgTaekwondo from '../shared/images/taekwondo.svg';
-import imgTravel from '../shared/images/suitcase.svg';
-import imgChess from '../shared/images/chess.svg';
-import { StackProps } from '../shared/components';
+import imgAstronomy from '../../shared/images/telescope.svg';
+import imgJogging from '../../shared/images/jogging.svg';
+// import imgMovies from '../../shared/images/movies.svg';
+import imgRollerskating from '../../shared/images/rollerskating.svg';
+// import imgTaekwondo from '../../shared/images/taekwondo.svg';
+import imgTravel from '../../shared/images/suitcase.svg';
+import imgChess from '../../shared/images/chess.svg';
+import { StackProps } from '../../shared/components';
 
-export enum CONTENT_SECTION_TYPE {
+export enum NOIR_CONTENT_SECTION_TYPE {
   FOOTER = 'footer',
   HERO = 'hero',
   LIST_ICONS = 'list-icons',
@@ -20,95 +20,95 @@ export enum CONTENT_SECTION_TYPE {
   LIST_STRENGTHS = 'list-strengths',
 };
 
-type ContentBulletPointList = {
+type NoirContentBulletPointList = {
   list: string [];
   badges?: string[];
 };
 
-type ContentListItemBulletPoints = {
+type NoirContentListItemBulletPoints = {
   headline: string;
-  content: ContentBulletPointList;
+  content: NoirContentBulletPointList;
 };
 
-type ContentListItemProgressBar = {
+type NoirContentListItemProgressBar = {
   headline: string;
   content: number;
 };
 
-type ContentListItemSimple = {
+type NoirContentListItemSimple = {
   headline: string;
   content: React.ReactNode;
   href?: string;
 };
 
-type ContentSectionFooter = {
-  type: CONTENT_SECTION_TYPE.FOOTER;
+type NoirContentSectionFooter = {
+  type: NOIR_CONTENT_SECTION_TYPE.FOOTER;
   label?: string;
   content: string;
 };
 
-type ContentSectionHero = {
-  type: CONTENT_SECTION_TYPE.HERO;
+type NoirContentSectionHero = {
+  type: NOIR_CONTENT_SECTION_TYPE.HERO;
   label?: string;
   name: string;
   profession: string;
 };
 
-type ContentSectionListIcons = {
-  type: CONTENT_SECTION_TYPE.LIST_ICONS;
+type NoirContentSectionListIcons = {
+  type: NOIR_CONTENT_SECTION_TYPE.LIST_ICONS;
   label?: string;
   list: string[];
 };
 
-type ContentSectionListNested = {
-  type: CONTENT_SECTION_TYPE.LIST_NESTED;
+type NoirContentSectionListNested = {
+  type: NOIR_CONTENT_SECTION_TYPE.LIST_NESTED;
   label?: string;
-  list: ContentListItemBulletPoints[];
+  list: NoirContentListItemBulletPoints[];
 } & StackProps;
 
-type ContentSectionListSimple = {
-  type: CONTENT_SECTION_TYPE.LIST_SIMPLE;
+type NoirContentSectionListSimple = {
+  type: NOIR_CONTENT_SECTION_TYPE.LIST_SIMPLE;
   label?: string;
-  list: ContentListItemSimple[];
+  list: NoirContentListItemSimple[];
 } & StackProps;
 
-type ContentSectionListSkills = {
-  type: CONTENT_SECTION_TYPE.LIST_SKILLS;
+type NoirContentSectionListSkills = {
+  type: NOIR_CONTENT_SECTION_TYPE.LIST_SKILLS;
   label?: string;
-  list: ContentListItemProgressBar[];
+  list: NoirContentListItemProgressBar[];
 } & StackProps;
 
-export type ContentSection =
-  | ContentSectionFooter
-  | ContentSectionHero
-  | ContentSectionListIcons
-  | ContentSectionListSimple
-  | ContentSectionListSkills
-  | ContentSectionListNested
+export type NoirContentSection =
+  | NoirContentSectionFooter
+  | NoirContentSectionHero
+  | NoirContentSectionListIcons
+  | NoirContentSectionListSimple
+  | NoirContentSectionListSkills
+  | NoirContentSectionListNested
   ;
 
-type Content = {
-  about: ContentSection;
-  contact: ContentSection;
-  coverLetter?: ContentSection;
-  education: ContentSection;
-  experience: ContentSection;
-  footer: ContentSection;
-  hero: ContentSection;
-  hobbies: ContentSection;
-  languages: ContentSection;
-  skills: ContentSection;
-  strengths: ContentSection;
+type NoirContentProps = {
+  about: NoirContentSection;
+  contact: NoirContentSection;
+  coverLetter?: NoirContentSection;
+  education: NoirContentSection;
+  experience: NoirContentSection;
+  footer: NoirContentSection;
+  hero: NoirContentSection;
+  hobbies: NoirContentSection;
+  languages: NoirContentSection;
+  skills: NoirContentSection;
+  strengths: NoirContentSection;
 };
 
-export const content: Content = {
+export const NoirContent: NoirContentProps = {
   hero: {
-    type: CONTENT_SECTION_TYPE.HERO,
+    type: NOIR_CONTENT_SECTION_TYPE.HERO,
     name: 'John Doe',
     profession: 'Rocket Engineer',
   },
   contact: {
-    type: CONTENT_SECTION_TYPE.LIST_SIMPLE,
+    type: NOIR_CONTENT_SECTION_TYPE.LIST_SIMPLE,
     list: [
       {
         headline: 'Address',
@@ -137,7 +137,7 @@ export const content: Content = {
     ],
   },
   coverLetter: {
-    type: CONTENT_SECTION_TYPE.LIST_SIMPLE,
+    type: NOIR_CONTENT_SECTION_TYPE.LIST_SIMPLE,
     label: 'Cover letter',
     list: [
       {
@@ -152,7 +152,7 @@ export const content: Content = {
         ,
       },
       {
-        headline: 'Lorem ipsum dolor sit amet',
+        headline: 'Lorem ipsum dolor sit amet 2',
         content:
           <>
             Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
@@ -165,7 +165,7 @@ export const content: Content = {
           </>
       },
       {
-        headline: 'Lorem ipsum dolor sit amet',
+        headline: 'Lorem ipsum dolor sit amet 3',
         content:
           <>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -180,7 +180,7 @@ export const content: Content = {
     ],
   },
   about: {
-    type: CONTENT_SECTION_TYPE.LIST_SIMPLE,
+    type: NOIR_CONTENT_SECTION_TYPE.LIST_SIMPLE,
     label: 'About me',
     list: [
       {
@@ -195,7 +195,7 @@ export const content: Content = {
     ],
   },
   experience: {
-    type: CONTENT_SECTION_TYPE.LIST_NESTED,
+    type: NOIR_CONTENT_SECTION_TYPE.LIST_NESTED,
     label: 'Experience',
     list: [
       {
@@ -229,7 +229,7 @@ export const content: Content = {
     ],
   },
   education: {
-    type: CONTENT_SECTION_TYPE.LIST_SIMPLE,
+    type: NOIR_CONTENT_SECTION_TYPE.LIST_SIMPLE,
     label: 'Education',
     list: [
       {
@@ -243,7 +243,7 @@ export const content: Content = {
     ],
   },
   skills: {
-    type: CONTENT_SECTION_TYPE.LIST_SKILLS,
+    type: NOIR_CONTENT_SECTION_TYPE.LIST_SKILLS,
     label: 'Skills',
     list: [
       {
@@ -275,7 +275,7 @@ export const content: Content = {
     columnCount: 2,
   },
   strengths: {
-    type: CONTENT_SECTION_TYPE.LIST_SIMPLE,
+    type: NOIR_CONTENT_SECTION_TYPE.LIST_SIMPLE,
     label: 'Strengths',
     list: [
       {
@@ -299,7 +299,7 @@ export const content: Content = {
     columnCount: 2,
   },
   languages: {
-    type: CONTENT_SECTION_TYPE.LIST_SIMPLE,
+    type: NOIR_CONTENT_SECTION_TYPE.LIST_SIMPLE,
     label: 'Languages',
     list: [
       {
@@ -315,7 +315,7 @@ export const content: Content = {
     columnCount: 2,
   },
   hobbies: {
-    type: CONTENT_SECTION_TYPE.LIST_ICONS,
+    type: NOIR_CONTENT_SECTION_TYPE.LIST_ICONS,
     label: 'Hobbies',
     list: [
       imgRollerskating,
@@ -326,7 +326,7 @@ export const content: Content = {
     ],
   },
   footer: {
-    type: CONTENT_SECTION_TYPE.FOOTER,
+    type: NOIR_CONTENT_SECTION_TYPE.FOOTER,
     content: 'I agree to the processing of personal data provided in this document for realising the recruitment process pursuant to the Personal Data Protection Act of 10 May 2018 (Journal of Laws 2018, item 1000) and in agreement with Regulation (EU) 2016/679 of the European Parliament and of the Council of 27 April 2016 on the protection of natural persons with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC (General Data Protection Regulation).',
   },
 };
